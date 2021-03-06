@@ -1,0 +1,9 @@
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\bin\Debug\netcoreapp3.1\DayCounter.Domain.deps.json
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\bin\Debug\netcoreapp3.1\DayCounter.Domain.dll
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\bin\Debug\netcoreapp3.1\DayCounter.Domain.pdb
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\obj\Debug\netcoreapp3.1\DayCounter.Domain.csprojAssemblyReference.cache
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\obj\Debug\netcoreapp3.1\DayCounter.Domain.AssemblyInfoInputs.cache
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\obj\Debug\netcoreapp3.1\DayCounter.Domain.AssemblyInfo.cs
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\obj\Debug\netcoreapp3.1\DayCounter.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\obj\Debug\netcoreapp3.1\DayCounter.Domain.dll
+C:\Projects\day-counter\DayCounter\DayCounter.Domain\obj\Debug\netcoreapp3.1\DayCounter.Domain.pdb

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "DayCounter.Business/1.0.0": {
+        "dependencies": {
+          "DayCounter.Data": "1.0.0"
+        },
+        "runtime": {
+          "DayCounter.Business.dll": {}
+        }
+      },
+      "DayCounter.Data/1.0.0": {
+        "runtime": {
+          "DayCounter.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DayCounter.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DayCounter.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
