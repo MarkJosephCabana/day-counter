@@ -1,3 +1,4 @@
+using DayCounter.Business;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,6 @@ namespace DayCounter.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
@@ -36,6 +36,8 @@ namespace DayCounter.WebUI
             {
                 configuration.RootPath = "vueapp/build";
             });
+
+            services.RegisterBusiness();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +64,8 @@ namespace DayCounter.WebUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller}/{action=Index}/{id?}")
+                ;
             });
 
             app.UseSpa(spa =>

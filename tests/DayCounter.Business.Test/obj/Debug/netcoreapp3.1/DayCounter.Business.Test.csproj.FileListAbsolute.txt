@@ -100,3 +100,4 @@ C:\Projects\day-counter\tests\DayCounter.Business.Test\obj\Debug\netcoreapp3.1\D
 C:\Projects\day-counter\tests\DayCounter.Business.Test\obj\Debug\netcoreapp3.1\DayCounter.Business.Test.dll
 C:\Projects\day-counter\tests\DayCounter.Business.Test\obj\Debug\netcoreapp3.1\DayCounter.Business.Test.pdb
 C:\Projects\day-counter\tests\DayCounter.Business.Test\obj\Debug\netcoreapp3.1\DayCounter.Business.Test.genruntimeconfig.cache
+C:\Projects\day-counter\tests\DayCounter.Business.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll

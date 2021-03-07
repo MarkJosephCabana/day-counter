@@ -1,6 +1,6 @@
 ﻿using DayCounter.Data.Calendar.Entities;
 
-namespace DayCounter.Business.Calendar.Adapters
+namespace DayCounter.Business.Calendar.Services
 {
     public interface IVariableHolidayConverterService
     {

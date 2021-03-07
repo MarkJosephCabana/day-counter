@@ -37,7 +37,7 @@ namespace DayCounter.Business.Test
             var holidayDateAdjusterService = new Mock<IHolidayDateAdjusterService>();
 
             _DaysRepository.Setup(r => r.GetWeekends()).Returns(weekends);
-            _DaysRepository.Setup(r => r.GetHolidays()).Returns(holidays);
+            _DaysRepository.Setup(r => r.GetSimpleHolidays()).Returns(holidays);
 
             _BusinessDayCounterService = new BusinessDayCounterService(new DatesValidator(),
                 _DaysRepository.Object, holidayDateAdjusterService.Object);
@@ -188,19 +188,18 @@ namespace DayCounter.Business.Test
             Assert.AreEqual(59, _gap);
         }
 
-        //[Test]
-        //public void test_case_seven_has_59_weekday()
-        //{
-        //    Arrange
-        //    DateTime startDate = new DateTime(2013, 10, 7, 0, 0, 0),
-        //        endDate = new DateTime(2014, 1, 1, 0, 0, 0);
-        //    var holidays = _DaysRepository.Object.GetHolidays().ToList();
+        [Test]
+        public void sunday_to_tuesday_has_1_weekday()
+        {
+            //Arrange
+            DateTime startDate = new DateTime(2021, 2, 28, 0, 0, 0),
+                endDate = new DateTime(2021, 3, 2, 0, 0, 0);
 
-        //    Act
-        //    _gap = _BusinessDayCounterService.BusinessDaysBetweenTwoDates(startDate, endDate, holidays);
+            //Act
+            _gap = _BusinessDayCounterService.WeekdaysBetweenTwoDates(startDate, endDate);
 
-        //    Assert
-        //    Assert.AreEqual(59, _gap);
-        //}
+            //Assert
+            Assert.AreEqual(1, _gap);
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TybyjlaqD21zG8g/FP6cm/RPl3TcZpS3kRcVuW90q1snKygfYdbcssCzXR7t7o3TLUVmtwolUNJYfV0X70yhJA==",
+  "dgSpecHash": "1jY3rgXKxZU7D+upBuB0wUZGCS6X+RzLSQkzbNlVrZuHYvQ7ghPO7sJ19NTp9IzIGMeQ7QNSsxknaqc4KCJpJQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\day-counter\\tests\\DayCounter.Business.Test\\DayCounter.Business.Test.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Maki\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\Maki\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Maki\\.nuget\\packages\\microsoft.dotnet.internalabstractions\\1.0.0\\microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
+    "C:\\Users\\Maki\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Maki\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
     "C:\\Users\\Maki\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Maki\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

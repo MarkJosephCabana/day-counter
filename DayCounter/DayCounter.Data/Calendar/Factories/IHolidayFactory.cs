@@ -8,5 +8,6 @@ namespace DayCounter.Data.Calendar.Factories
     public interface IHolidayFactory
     {
         IHoliday Create();
+        IHoliday Create(int id, string name, DateTime date, bool isAdjustable);
     }
 }

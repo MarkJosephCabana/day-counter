@@ -29,3 +29,8 @@ C:\Projects\day-counter\DayCounter\DayCounter.WebUI\obj\Debug\net5.0\DayCounter.
 C:\Projects\day-counter\DayCounter\DayCounter.WebUI\obj\Debug\net5.0\DayCounter.WebUI.genruntimeconfig.cache
 C:\Projects\day-counter\DayCounter\DayCounter.WebUI\bin\Debug\net5.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
 C:\Projects\day-counter\DayCounter\DayCounter.WebUI\bin\Debug\net5.0\VueCliMiddleware.dll
+C:\Projects\day-counter\DayCounter\DayCounter.WebUI\bin\Debug\net5.0\package-lock.json
+C:\Projects\day-counter\DayCounter\DayCounter.WebUI\bin\Debug\net5.0\DayCounter.Business.dll
+C:\Projects\day-counter\DayCounter\DayCounter.WebUI\bin\Debug\net5.0\DayCounter.Data.dll
+C:\Projects\day-counter\DayCounter\DayCounter.WebUI\bin\Debug\net5.0\DayCounter.Business.pdb
+C:\Projects\day-counter\DayCounter\DayCounter.WebUI\bin\Debug\net5.0\DayCounter.Data.pdb
