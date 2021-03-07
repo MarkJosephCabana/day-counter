@@ -1,7 +1,6 @@
-﻿using DayCounter.Data.Calendar.Entities;
+﻿using DayCounter.Business.Calendar.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DayCounter.Business.Calendar.Services
 {
@@ -9,6 +8,6 @@ namespace DayCounter.Business.Calendar.Services
     {
         int WeekdaysBetweenTwoDates(DateTime firstDate, DateTime secondDate);
         int BusinessDaysBetweenTwoDates(DateTime firstDate, DateTime secondDate, IList<DateTime> publicHolidays);
-        int BusinessDaysBetweenTwoDates(DateTime firstDate, DateTime secondDate, IList<IHoliday> publicHolidays);
+        int BusinessDaysBetweenTwoDates(DateTime firstDate, DateTime secondDate, IList<IHolidayModel> publicHolidays);
     }
 }

@@ -1,6 +1,10 @@
+using DayCounter.Business.Calendar.Factories;
+using DayCounter.Business.Calendar.Factories.Implementations;
 using DayCounter.Business.Calendar.Services;
 using DayCounter.Business.Calendar.Services.Implementations;
 using DayCounter.Business.Calendar.Validators.Implementations;
+using DayCounter.Data.Calendar.Entities;
+using DayCounter.Data.Calendar.Entities.Implementations;
 using DayCounter.Data.Calendar.Repositories;
 using Moq;
 using NUnit.Framework;
@@ -14,6 +18,7 @@ namespace DayCounter.Business.Test
     {
         private IBusinessDayCounterService _BusinessDayCounterService;
         private Mock<IDaysRepository> _DaysRepository;
+        private IHolidayModelFactory _HolidayModelFactory;
         private int _gap;
 
         [SetUp]
@@ -24,7 +29,7 @@ namespace DayCounter.Business.Test
                     DayOfWeek.Sunday
                 };
 
-            var holidays = new List<DateTime> {
+            var simpleHolidays = new List<DateTime> {
                 new DateTime(2013, 12, 25,0,0,0),
                 new DateTime(2013, 12, 26,0,0,0),
                 new DateTime(2014, 1, 1,0,0,0),
@@ -32,15 +37,42 @@ namespace DayCounter.Business.Test
                 new DateTime(2017, 1, 1, 0, 0, 0)
             };
 
+            var holidays = new List<IHoliday>
+            {
+                new Holiday
+                {
+                    Id = 1,
+                    Name = "Xmas 2013",
+                    HolidayDate = new DateTime(2013, 12, 25,0,0,0),
+                    IsAdjustable = true
+                },
+                new Holiday
+                {
+                    Id = 2,
+                    Name = "Boxing day 2013",
+                    HolidayDate = new DateTime(2013, 12, 26,0,0,0),
+                    IsAdjustable = true
+                },
+                new Holiday
+                {
+                    Id = 3,
+                    Name = "New Year 2014",
+                    HolidayDate = new DateTime(2014, 1, 1,0,0,0),
+                    IsAdjustable = true
+                }
+            };
+
             _DaysRepository = new Mock<IDaysRepository>();
 
-            var holidayDateAdjusterService = new Mock<IHolidayDateAdjusterService>();
+            var holidayDateAdjusterService = new HolidayDateAdjusterService(_DaysRepository.Object);
 
             _DaysRepository.Setup(r => r.GetWeekends()).Returns(weekends);
-            _DaysRepository.Setup(r => r.GetSimpleHolidays()).Returns(holidays);
+            _DaysRepository.Setup(r => r.GetSimpleHolidays()).Returns(simpleHolidays);
+            _DaysRepository.Setup(r => r.GetHolidays()).Returns(holidays);
 
             _BusinessDayCounterService = new BusinessDayCounterService(new DatesValidator(),
-                _DaysRepository.Object, holidayDateAdjusterService.Object);
+                _DaysRepository.Object, holidayDateAdjusterService);
+            _HolidayModelFactory = new HolidayModelFactory();
         }
 
         [Test]
@@ -149,7 +181,9 @@ namespace DayCounter.Business.Test
             //Arrange
             DateTime startDate = new DateTime(2013, 10, 7, 0, 0, 0),
                 endDate = new DateTime(2013, 10, 9, 0, 0, 0);
-            var holidays = _DaysRepository.Object.GetHolidays().ToList();
+            var holidays = _DaysRepository.Object.GetHolidays()
+                .Select(h => _HolidayModelFactory.Create(h.Id, h.Name, h.HolidayDate, h.IsAdjustable))
+                .ToList();
 
             //Act
             _gap = _BusinessDayCounterService.BusinessDaysBetweenTwoDates(startDate, endDate, holidays);
@@ -164,7 +198,9 @@ namespace DayCounter.Business.Test
             //Arrange
             DateTime startDate = new DateTime(2013, 12, 24, 0, 0, 0),
                 endDate = new DateTime(2013, 12, 27, 0, 0, 0);
-            var holidays = _DaysRepository.Object.GetHolidays().ToList();
+            var holidays = _DaysRepository.Object.GetHolidays()
+                 .Select(h => _HolidayModelFactory.Create(h.Id, h.Name, h.HolidayDate, h.IsAdjustable))
+                 .ToList();
 
             //Act
             _gap = _BusinessDayCounterService.BusinessDaysBetweenTwoDates(startDate, endDate, holidays);
@@ -179,7 +215,9 @@ namespace DayCounter.Business.Test
             //Arrange
             DateTime startDate = new DateTime(2013, 10, 7, 0, 0, 0),
                 endDate = new DateTime(2014, 1, 1, 0, 0, 0);
-            var holidays = _DaysRepository.Object.GetHolidays().ToList();
+            var holidays = _DaysRepository.Object.GetHolidays()
+                 .Select(h => _HolidayModelFactory.Create(h.Id, h.Name, h.HolidayDate, h.IsAdjustable))
+                 .ToList();
 
             //Act
             _gap = _BusinessDayCounterService.BusinessDaysBetweenTwoDates(startDate, endDate, holidays);

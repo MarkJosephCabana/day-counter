@@ -1,9 +1,10 @@
-﻿using DayCounter.Data.Calendar.Entities;
+﻿using DayCounter.Business.Calendar.Models;
+using DayCounter.Data.Calendar.Entities;
 
 namespace DayCounter.Business.Calendar.Services
 {
     public interface IVariableHolidayConverterService
     {
-        IHoliday GetHoliday(IVariableHoliday variableHoliday, int year);
+        IHolidayModel GetHoliday(IVariableHoliday variableHoliday, int year);
     }
 }

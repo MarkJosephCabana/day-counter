@@ -1,5 +1,5 @@
-﻿using DayCounter.Business.Calendar.Validators;
-using DayCounter.Data.Calendar.Entities;
+﻿using DayCounter.Business.Calendar.Models;
+using DayCounter.Business.Calendar.Validators;
 using DayCounter.Data.Calendar.Repositories;
 using System;
 using System.Collections.Generic;
@@ -43,12 +43,12 @@ namespace DayCounter.Business.Calendar.Services.Implementations
             return weekDays;
         }
 
-        public int BusinessDaysBetweenTwoDates(DateTime firstDate, DateTime secondDate, IList<IHoliday> publicHolidays)
+        public int BusinessDaysBetweenTwoDates(DateTime firstDate, DateTime secondDate, IList<IHolidayModel> publicHolidays)
         {
             var publicHolidayDates = publicHolidays?
                 .Select(publicHoliday => _HolidayDateAdjusterService.AdjustHolidayDate(publicHoliday))
                 .Where(publicHoliday => publicHoliday != null)
-                .Select(publicHoliday => publicHoliday.HolidayDate)
+                .Select(publicHoliday => publicHoliday.Date)
                 .ToList() ?? new List<DateTime>();
 
             return BusinessDaysBetweenTwoDates(firstDate, secondDate, publicHolidayDates);

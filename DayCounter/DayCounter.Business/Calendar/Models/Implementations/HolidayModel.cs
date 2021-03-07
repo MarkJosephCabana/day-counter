@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DayCounter.Business.Calendar.Models
+namespace DayCounter.Business.Calendar.Models.Implementations
 {
-    public class HolidayModel
+    public class HolidayModel : IHolidayModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

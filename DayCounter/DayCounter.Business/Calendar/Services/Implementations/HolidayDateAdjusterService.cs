@@ -1,9 +1,7 @@
-﻿using DayCounter.Data.Calendar.Entities;
+﻿using DayCounter.Business.Calendar.Models;
 using DayCounter.Data.Calendar.Repositories;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DayCounter.Business.Calendar.Services.Implementations
 {
@@ -16,15 +14,15 @@ namespace DayCounter.Business.Calendar.Services.Implementations
             _DaysRepository = daysRepository;
         }
 
-        public IHoliday AdjustHolidayDate(IHoliday holiday)
+        public IHolidayModel AdjustHolidayDate(IHolidayModel holiday)
         {
             if(holiday?.IsAdjustable ?? false)
             {
                 var weekends = _DaysRepository.GetWeekends();
 
-                while (weekends.Contains(holiday.HolidayDate.DayOfWeek))
+                while (weekends.Contains(holiday.Date.DayOfWeek))
                 {
-                    holiday.HolidayDate = holiday.HolidayDate.AddDays(1);
+                    holiday.Date = holiday.Date.AddDays(1);
                 }
             }
 

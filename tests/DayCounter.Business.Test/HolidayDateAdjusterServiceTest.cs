@@ -1,4 +1,7 @@
-﻿using DayCounter.Business.Calendar.Services;
+﻿using DayCounter.Business.Calendar.Factories;
+using DayCounter.Business.Calendar.Models;
+using DayCounter.Business.Calendar.Models.Implementations;
+using DayCounter.Business.Calendar.Services;
 using DayCounter.Business.Calendar.Services.Implementations;
 using DayCounter.Data.Calendar.Entities;
 using DayCounter.Data.Calendar.Entities.Implementations;
@@ -14,7 +17,7 @@ namespace DayCounter.Business.Test
     public class HolidayDateAdjusterServiceTest
     {
         private IHolidayDateAdjusterService _HolidayDateAdjusterService;
-        private Mock<IHolidayFactory> _HolidayFactory;
+        private Mock<IHolidayModelFactory> _HolidayModelFactory;
 
         [SetUp]
         public void Setup()
@@ -27,8 +30,8 @@ namespace DayCounter.Business.Test
             var daysRepository = new Mock<IDaysRepository>();
             daysRepository.Setup(r => r.GetWeekends()).Returns(weekend);
 
-            _HolidayFactory = new Mock<IHolidayFactory>();
-            _HolidayFactory.Setup(f => f.Create()).Returns(() => new Holiday());
+            _HolidayModelFactory = new Mock<IHolidayModelFactory>();
+            _HolidayModelFactory.Setup(f => f.Create()).Returns(() => new HolidayModel());
 
             _HolidayDateAdjusterService = new HolidayDateAdjusterService(daysRepository.Object);
         }
@@ -37,10 +40,10 @@ namespace DayCounter.Business.Test
         public void sunday_holiday_adjusted_to_monday()
         {
             //Arrange
-            var holiday = _HolidayFactory.Object.Create();
+            var holiday = _HolidayModelFactory.Object.Create();
             holiday.Id = 0;
             holiday.Name = "New Year Day 2017";
-            holiday.HolidayDate = new DateTime(2017, 1, 1, 0, 0, 0);
+            holiday.Date = new DateTime(2017, 1, 1, 0, 0, 0);
             holiday.IsAdjustable = true;
             DateTime expected = new DateTime(2017, 1, 2, 0, 0, 0);
 
@@ -49,17 +52,17 @@ namespace DayCounter.Business.Test
 
 
             //Assert
-            Assert.AreEqual(expected.Date, holiday.HolidayDate.Date);
+            Assert.AreEqual(expected.Date, holiday.Date.Date);
         }
 
         [Test]
         public void monday_holiday_not_adjusted()
         {
             //Arrange
-            var holiday = _HolidayFactory.Object.Create();
+            var holiday = _HolidayModelFactory.Object.Create();
             holiday.Id = 0;
             holiday.Name = "New Year Day 2018";
-            holiday.HolidayDate = new DateTime(2018, 1, 1, 0, 0, 0);
+            holiday.Date = new DateTime(2018, 1, 1, 0, 0, 0);
             holiday.IsAdjustable = true;
             DateTime expected = new DateTime(2018, 1, 1, 0, 0, 0);
 
@@ -68,7 +71,7 @@ namespace DayCounter.Business.Test
 
 
             //Assert
-            Assert.AreEqual(expected.Date, holiday.HolidayDate.Date);
+            Assert.AreEqual(expected.Date, holiday.Date.Date);
         }
 
 
@@ -76,10 +79,10 @@ namespace DayCounter.Business.Test
         public void saturday_holiday_adjusted_to_monday()
         {
             //Arrange
-            var holiday = _HolidayFactory.Object.Create();
+            var holiday = _HolidayModelFactory.Object.Create();
             holiday.Id = 0;
             holiday.Name = "New Year Day 2022";
-            holiday.HolidayDate = new DateTime(2022, 1, 1, 0, 0, 0);
+            holiday.Date = new DateTime(2022, 1, 1, 0, 0, 0);
             holiday.IsAdjustable = true;
             DateTime expected = new DateTime(2022, 1, 3, 0, 0, 0);
 
@@ -87,14 +90,14 @@ namespace DayCounter.Business.Test
             holiday = _HolidayDateAdjusterService.AdjustHolidayDate(holiday);
 
             //Assert
-            Assert.AreEqual(expected.Date, holiday.HolidayDate.Date);
+            Assert.AreEqual(expected.Date, holiday.Date.Date);
         }
 
         [Test]
         public void null_holiday_returns_null()
         {
             //Arrange
-            IHoliday holiday = null;
+            IHolidayModel holiday = null;
 
             //Act
             holiday = _HolidayDateAdjusterService.AdjustHolidayDate(holiday);
@@ -107,10 +110,10 @@ namespace DayCounter.Business.Test
         public void non_adjustable_holiday_is_not_adjusted()
         {
             //Arrange
-            var holiday = _HolidayFactory.Object.Create();
+            var holiday = _HolidayModelFactory.Object.Create();
             holiday.Id = 0;
             holiday.Name = "Anzac day 2021";
-            holiday.HolidayDate = new DateTime(2021, 4, 25, 0, 0, 0);
+            holiday.Date = new DateTime(2021, 4, 25, 0, 0, 0);
             holiday.IsAdjustable = false;
             DateTime expected = new DateTime(2021, 4, 25, 0, 0, 0);
 
@@ -118,7 +121,7 @@ namespace DayCounter.Business.Test
             holiday = _HolidayDateAdjusterService.AdjustHolidayDate(holiday);
 
             //Assert
-            Assert.AreEqual(expected.Date, holiday.HolidayDate.Date);
+            Assert.AreEqual(expected.Date, holiday.Date.Date);
         }
     }
 }

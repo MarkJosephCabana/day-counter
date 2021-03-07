@@ -4,3 +4,4 @@
 # node
 /DayCounter/DayCounter.WebUI/vueapp/node_modules/*
 /DayCounter/DayCounter.WebUI/node_modules/*
+/DayCounter/.vs/*

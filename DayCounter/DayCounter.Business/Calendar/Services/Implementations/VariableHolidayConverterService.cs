@@ -1,30 +1,28 @@
-﻿using DayCounter.Business.Calendar.Services;
+﻿using DayCounter.Business.Calendar.Factories;
+using DayCounter.Business.Calendar.Models;
 using DayCounter.Data.Calendar.Entities;
-using DayCounter.Data.Calendar.Factories;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DayCounter.Business.Calendar.Services.Implementations
 {
     public class VariableHolidayConverterService : IVariableHolidayConverterService
     {
-        private readonly IHolidayFactory _HolidayFactory;
+        private readonly IHolidayModelFactory _HolidayModelFactory;
 
-        public VariableHolidayConverterService(IHolidayFactory holidayFactory)
+        public VariableHolidayConverterService(IHolidayModelFactory holidayFactory)
         {
-            _HolidayFactory = holidayFactory;
+            _HolidayModelFactory = holidayFactory;
         }
 
-        public IHoliday GetHoliday(IVariableHoliday variableHoliday, int year)
+        public IHolidayModel GetHoliday(IVariableHoliday variableHoliday, int year)
         {
-            var holiday = _HolidayFactory.Create();
+            var holiday = _HolidayModelFactory.Create();
 
             if (variableHoliday != null)
             {
                 holiday.Id = variableHoliday.id;
                 holiday.Name = variableHoliday.Name;
-                holiday.HolidayDate = GetHolidayDate(year, variableHoliday.Month,
+                holiday.Date = GetHolidayDate(year, variableHoliday.Month,
                     variableHoliday.Nth, variableHoliday.DayOfWeek);
             }
 

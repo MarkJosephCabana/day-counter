@@ -1,4 +1,6 @@
-﻿using DayCounter.Business.Calendar.Services;
+﻿using DayCounter.Business.Calendar.Factories;
+using DayCounter.Business.Calendar.Models.Implementations;
+using DayCounter.Business.Calendar.Services;
 using DayCounter.Business.Calendar.Services.Implementations;
 using DayCounter.Data.Calendar.Entities.Implementations;
 using DayCounter.Data.Calendar.Factories;
@@ -11,19 +13,19 @@ namespace DayCounter.Business.Test
     public class VariableHolidayConverterServiceTest
     {
         private IVariableHolidayConverterService _VariableHolidayConverterService;
-        private Mock<IHolidayFactory> _HolidayFactory;
+        private Mock<IHolidayModelFactory> _HolidayModelFactory;
         private Mock<IVariableHolidayFactory> _VariableHolidayFactory;
 
         [SetUp]
         public void Setup()
         {
-            _HolidayFactory = new Mock<IHolidayFactory>();
+            _HolidayModelFactory = new Mock<IHolidayModelFactory>();
             _VariableHolidayFactory = new Mock<IVariableHolidayFactory>();
 
-            _HolidayFactory.Setup(f => f.Create()).Returns(() => new Holiday());
+            _HolidayModelFactory.Setup(f => f.Create()).Returns(() => new HolidayModel());
             _VariableHolidayFactory.Setup(f => f.Create()).Returns(() => new VariableHoliday());
 
-            _VariableHolidayConverterService = new VariableHolidayConverterService(_HolidayFactory.Object);
+            _VariableHolidayConverterService = new VariableHolidayConverterService(_HolidayModelFactory.Object);
         }
 
         [Test]
@@ -40,7 +42,7 @@ namespace DayCounter.Business.Test
             var holiday = _VariableHolidayConverterService.GetHoliday(variableHoliday, 2021);
 
             //Assert
-            Assert.AreEqual(expected.Date, holiday.HolidayDate.Date);
+            Assert.AreEqual(expected.Date, holiday.Date.Date);
         }
 
         [Test]
@@ -57,7 +59,7 @@ namespace DayCounter.Business.Test
             var holiday = _VariableHolidayConverterService.GetHoliday(variableHoliday, 2021);
 
             //Assert
-            Assert.AreNotEqual(expected.Date, holiday.HolidayDate.Date);
+            Assert.AreNotEqual(expected.Date, holiday.Date.Date);
         }
 
 
@@ -75,7 +77,7 @@ namespace DayCounter.Business.Test
             var holiday = _VariableHolidayConverterService.GetHoliday(variableHoliday, 2021);
 
             //Assert
-            Assert.AreEqual(DateTime.MinValue.Date, holiday.HolidayDate.Date);
+            Assert.AreEqual(DateTime.MinValue.Date, holiday.Date.Date);
         }
 
         [Test]
@@ -92,7 +94,7 @@ namespace DayCounter.Business.Test
             var holiday = _VariableHolidayConverterService.GetHoliday(variableHoliday, 2021);
 
             //Assert
-            Assert.AreEqual(DateTime.MinValue.Date, holiday.HolidayDate.Date);
+            Assert.AreEqual(DateTime.MinValue.Date, holiday.Date.Date);
         }
     }
 }
