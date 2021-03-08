@@ -10,9 +10,12 @@ namespace DayCounter.Data.Calendar.Repositories.Implementations
     public class InMemoryDaysRepository : IDaysRepository
     {
         private readonly IHolidayFactory _HolidayFactory;
-        public InMemoryDaysRepository(IHolidayFactory holidayFactory)
+        private readonly IVariableHolidayFactory _VariableHolidayFactory;
+        public InMemoryDaysRepository(IHolidayFactory holidayFactory,
+            IVariableHolidayFactory variableHolidayFactory)
         {
             _HolidayFactory = holidayFactory;
+            _VariableHolidayFactory = variableHolidayFactory;
         }
 
         public IEnumerable<IHoliday> GetHolidays()
@@ -24,6 +27,14 @@ namespace DayCounter.Data.Calendar.Repositories.Implementations
             };
         }
 
+
+        public IEnumerable<IVariableHoliday> GetVariableHolidays()
+        {
+            return new List<IVariableHoliday> {
+                _VariableHolidayFactory.Create(new Random().Next(0, int.MaxValue), DayOfWeek.Monday, true, 6, "Queen's birthday", 2) 
+            };
+        }
+
         public IEnumerable<DateTime> GetSimpleHolidays()
         {
             return new List<DateTime> {
@@ -32,6 +43,8 @@ namespace DayCounter.Data.Calendar.Repositories.Implementations
                 new DateTime(2014, 1, 1,0,0,0)
             };
         }
+
+
 
         public IEnumerable<DayOfWeek> GetWeekends()
         {

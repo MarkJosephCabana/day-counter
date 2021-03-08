@@ -1,4 +1,5 @@
-﻿using DayCounter.Business.Calendar.Services;
+﻿using DayCounter.Business.Calendar.Models;
+using DayCounter.Business.Calendar.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,13 +13,13 @@ namespace DayCounter.WebUI.Controllers
     public class DayzController : ControllerBase
     {
         private readonly IBusinessDayCounterService _BusinessDayCounterService;
-        private readonly IHolidayDateAdjusterService _HolidayDateAdjusterService;
+        private readonly IHolidayServices _HolidayServices;
 
-        public DayzController(IBusinessDayCounterService businessDayCounterService, 
-            IHolidayDateAdjusterService holidayDateAdjusterService)
+        public DayzController(IBusinessDayCounterService businessDayCounterService,
+            IHolidayServices holidayServices)
         {
             _BusinessDayCounterService = businessDayCounterService;
-            _HolidayDateAdjusterService = holidayDateAdjusterService;
+            _HolidayServices = holidayServices;
         }
 
         [HttpGet,
@@ -35,14 +36,48 @@ namespace DayCounter.WebUI.Controllers
 
         [HttpGet,
          Route("businessdays/{start:int}/{end:int}")]
-        public async Task<ActionResult> GetHolidays(int start, int end)
+        public async Task<ActionResult> GetBusinessDays(int start, int end)
         {
             DateTime startDate = DateTimeOffset.FromUnixTimeSeconds(start).DateTime,
                 endDate = DateTimeOffset.FromUnixTimeSeconds(end).DateTime;
 
-            int gap = await Task.FromResult(_BusinessDayCounterService.WeekdaysBetweenTwoDates(startDate, endDate));
+            IList<IHolidayModel> holidays = _HolidayServices.GetHolidays().ToList();
+
+            int gap = await Task.FromResult(_BusinessDayCounterService.BusinessDaysBetweenTwoDates(startDate, endDate, holidays));
 
             return Ok(gap);
+        }
+
+        [HttpGet,
+        Route("businessdays/special/{start:int}/{end:int}")]
+        public async Task<ActionResult> GetSpecialBusinessDays(int start, int end)
+        {
+            DateTime startDate = DateTimeOffset.FromUnixTimeSeconds(start).DateTime,
+                endDate = DateTimeOffset.FromUnixTimeSeconds(end).DateTime;
+
+            IList<IHolidayModel> holidays = _HolidayServices.GetAllHolidays().ToList();
+
+            int gap = await Task.FromResult(_BusinessDayCounterService.BusinessDaysBetweenTwoDates(startDate, endDate, holidays));
+
+            return Ok(gap);
+        }
+
+        [HttpGet,
+        Route("holidays")]
+        public async Task<ActionResult> GetHolidays()
+        {
+            IList<IHolidayModel> holidays = await Task.FromResult(_HolidayServices.GetHolidays().ToList());
+
+            return Ok(holidays);
+        }
+
+        [HttpGet,
+        Route("holidays/special")]
+        public async Task<ActionResult> GetAllHolidays()
+        {
+            IList<IHolidayModel> holidays = await Task.FromResult(_HolidayServices.GetAllHolidays().ToList());
+
+            return Ok(holidays);
         }
     }
 }

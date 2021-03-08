@@ -21,12 +21,24 @@ export default {
       drawer: true,
       items: [
         { title: "Home", icon: "mdi-home-city", path: "/" },
-        { title: "Task 1", icon: "mdi-calendar-today", path: "/task/1" },
-        { title: "Task 2", icon: "mdi-calendar-today", path: "/task/2" },
-        { title: "Task 3", icon: "mdi-calendar-today", path: "/task/3" },
+        {
+          title: "Weekdays counter",
+          icon: "mdi-calendar-today",
+          path: "/task/1"
+        },
+        {
+          title: "Business days counter",
+          icon: "mdi-calendar-today",
+          path: "/task/2"
+        },
+        {
+          title: "Business days with special holidays",
+          icon: "mdi-calendar-today",
+          path: "/task/3"
+        }
       ],
-      mini: true,
+      mini: true
     };
-  },
+  }
 };
 </script>

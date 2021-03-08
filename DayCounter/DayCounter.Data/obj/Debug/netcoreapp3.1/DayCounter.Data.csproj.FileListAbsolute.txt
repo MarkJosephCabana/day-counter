@@ -6,3 +6,15 @@ C:\Projects\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCo
 C:\Projects\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.csproj.CoreCompileInputs.cache
 C:\Projects\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.dll
 C:\Projects\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\bin\Debug\netcoreapp3.1\DayCounter.Data.deps.json
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\bin\Debug\netcoreapp3.1\DayCounter.Data.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\bin\Debug\netcoreapp3.1\DayCounter.Data.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.AssemblyInfoInputs.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.AssemblyInfo.cs
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.csproj.CoreCompileInputs.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\bin\Debug\netcoreapp3.1\DayCounter.Shared.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\bin\Debug\netcoreapp3.1\DayCounter.Shared.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.csprojAssemblyReference.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Data\obj\Debug\netcoreapp3.1\DayCounter.Data.csproj.CopyComplete

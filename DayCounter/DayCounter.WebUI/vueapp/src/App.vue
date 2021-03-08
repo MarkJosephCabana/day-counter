@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <MainMenu />
-    <v-main>
-      <v-container>
+    <v-main class="grey lighten-3">
+      <v-container class="py-0 fill-height">
         <router-view />
       </v-container>
     </v-main>
@@ -16,11 +16,11 @@ export default {
   name: "App",
 
   components: {
-    MainMenu,
+    MainMenu
   },
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>

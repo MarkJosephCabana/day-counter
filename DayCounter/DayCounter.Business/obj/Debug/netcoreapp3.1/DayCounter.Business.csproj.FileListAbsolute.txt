@@ -10,3 +10,17 @@ C:\Projects\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\D
 C:\Projects\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.csproj.CopyComplete
 C:\Projects\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.dll
 C:\Projects\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\bin\Debug\netcoreapp3.1\DayCounter.Business.deps.json
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\bin\Debug\netcoreapp3.1\DayCounter.Business.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\bin\Debug\netcoreapp3.1\DayCounter.Business.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\bin\Debug\netcoreapp3.1\DayCounter.Data.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\bin\Debug\netcoreapp3.1\DayCounter.Data.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.csprojAssemblyReference.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.AssemblyInfoInputs.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.AssemblyInfo.cs
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.csproj.CoreCompileInputs.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.csproj.CopyComplete
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\obj\Debug\netcoreapp3.1\DayCounter.Business.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\bin\Debug\netcoreapp3.1\DayCounter.Shared.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Business\bin\Debug\netcoreapp3.1\DayCounter.Shared.pdb

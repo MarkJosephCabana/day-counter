@@ -1,12 +1,9 @@
 ﻿using DayCounter.Business.Calendar.Services;
-using DayCounter.Business.Calendar.Services.Implementations;
-using DayCounter.Business.Calendar.Validators;
-using DayCounter.Business.Calendar.Validators.Implementations;
-using DayCounter.Data.Calendar.Factories;
-using DayCounter.Data.Calendar.Factories.Implementations;
 using DayCounter.Data.Calendar.Repositories;
-using DayCounter.Data.Calendar.Repositories.Implementations;
+using DayCounter.Shared.DependencyResolution;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using System.Reflection;
 
 namespace DayCounter.Business
 {
@@ -14,13 +11,26 @@ namespace DayCounter.Business
     {
         public static void RegisterBusiness(this IServiceCollection service)
         {
-            service.AddTransient<IBusinessDayCounterService, BusinessDayCounterService>();
-            service.AddTransient<IHolidayDateAdjusterService, HolidayDateAdjusterService>();
-            service.AddTransient<IVariableHolidayConverterService, VariableHolidayConverterService>();
-            service.AddTransient<IDatesValidator, DatesValidator>();
-            service.AddTransient<IHolidayFactory, HolidayFactory>();
-            service.AddTransient<IVariableHolidayFactory, VariableHolidayFactory>();
-            service.AddTransient<IDaysRepository, InMemoryDaysRepository>();
+            service.AutoRegisterServices<IService>(typeof(IBusinessDayCounterService).Assembly)
+                .AutoRegisterServices<IService>(typeof(IDaysRepository).Assembly);
+        }
+
+        private static IServiceCollection AutoRegisterServices<TServiceInterface>(this IServiceCollection services, Assembly assembly)
+        { 
+            var servicesToRegister = assembly.GetTypes()
+                .Where(t => t.IsClass && !t.IsAbstract && typeof(TServiceInterface).IsAssignableFrom(t))
+                .ToList();
+
+            foreach (var s in servicesToRegister)
+            {
+                var interfaces = s.GetInterfaces().Where(t => t != typeof(TServiceInterface)).ToList();
+                foreach (var i in interfaces)
+                {
+                    services.AddTransient(i, s);
+                }
+            }
+
+            return services;
         }
     }
 }

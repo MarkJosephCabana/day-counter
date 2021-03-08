@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj": {}
+    "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj": {
+    "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj",
+        "projectUniqueName": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj",
         "projectName": "DayCounter.Data",
-        "projectPath": "C:\\Projects\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj",
-        "packagesPath": "C:\\Users\\Maki\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\day-counter\\DayCounter\\DayCounter.Data\\obj\\",
+        "projectPath": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj",
+        "packagesPath": "C:\\Users\\stephen.dolier\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Maki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stephen.dolier\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +25,70 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/aspnetvnext/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Shared\\DayCounter.Shared.csproj": {
+                "projectPath": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Shared\\DayCounter.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Shared\\DayCounter.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Shared\\DayCounter.Shared.csproj",
+        "projectName": "DayCounter.Shared",
+        "projectPath": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Shared\\DayCounter.Shared.csproj",
+        "packagesPath": "C:\\Users\\stephen.dolier\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\stephen.dolier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/aspnetvnext/api/v2/": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -57,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

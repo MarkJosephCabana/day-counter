@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3Pz8YtSdSdx4aRmuK1Mi373gjsBSXc1mZ4iwr3IiwBQnVDvjaUO2KuoncvGFecUzG/6MMlrsje8S8pydiYO0sQ==",
+  "dgSpecHash": "qBSdDJjAJDdQGmoKo2ODqr54PQF5B8Q+Y1r1CULeKCASeC189QeasPRVEtTVQGKnoe8HTfvks8HtXgaQJFbRxA==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj",
+  "projectFilePath": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Data\\DayCounter.Data.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "DayCounter.Data/1.0.0": {
+        "dependencies": {
+          "DayCounter.Shared": "1.0.0"
+        },
         "runtime": {
           "DayCounter.Data.dll": {}
+        }
+      },
+      "DayCounter.Shared/1.0.0": {
+        "runtime": {
+          "DayCounter.Shared.dll": {}
         }
       }
     }
   },
   "libraries": {
     "DayCounter.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DayCounter.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

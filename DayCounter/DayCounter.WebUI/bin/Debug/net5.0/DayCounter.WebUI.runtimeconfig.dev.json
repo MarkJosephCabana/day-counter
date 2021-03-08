@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Maki\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Maki\\.nuget\\packages",
+      "C:\\Users\\stephen.dolier\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\stephen.dolier\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }

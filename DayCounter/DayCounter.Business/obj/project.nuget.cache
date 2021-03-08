@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1Me42dFuwLFnhXfa2vxrIlXh6FwvafOVfMeiif8Al/480f2DCGKiSsW76cNDTeVViXx4NzofsCReTqIWSlUD1A==",
+  "dgSpecHash": "0DBpzDjDQW3IohqUSma/HyhpXurv3H2QvZIULD8+yUZ/eulScLH+5rJu5cFLE7B1+Qj61HyUPYhW9drU9J0hlA==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\day-counter\\DayCounter\\DayCounter.Business\\DayCounter.Business.csproj",
+  "projectFilePath": "C:\\Projects\\learning\\day-counter\\DayCounter\\DayCounter.Business\\DayCounter.Business.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Maki\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+    "C:\\Users\\stephen.dolier\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

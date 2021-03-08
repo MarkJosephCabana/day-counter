@@ -7,3 +7,11 @@ C:\Projects\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\Day
 C:\Projects\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.csproj.CoreCompileInputs.cache
 C:\Projects\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.dll
 C:\Projects\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\bin\Debug\netcoreapp3.1\DayCounter.Shared.deps.json
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\bin\Debug\netcoreapp3.1\DayCounter.Shared.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\bin\Debug\netcoreapp3.1\DayCounter.Shared.pdb
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.AssemblyInfoInputs.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.AssemblyInfo.cs
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.csproj.CoreCompileInputs.cache
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.dll
+C:\Projects\learning\day-counter\DayCounter\DayCounter.Shared\obj\Debug\netcoreapp3.1\DayCounter.Shared.pdb

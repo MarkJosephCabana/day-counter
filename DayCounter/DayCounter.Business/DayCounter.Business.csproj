@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DayCounter.Data\DayCounter.Data.csproj" />
+    <ProjectReference Include="..\DayCounter.Shared\DayCounter.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,7 @@
       "DayCounter.Business/1.0.0": {
         "dependencies": {
           "DayCounter.Data": "1.0.0",
+          "DayCounter.Shared": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
         },
         "runtime": {
@@ -24,8 +25,16 @@
         }
       },
       "DayCounter.Data/1.0.0": {
+        "dependencies": {
+          "DayCounter.Shared": "1.0.0"
+        },
         "runtime": {
           "DayCounter.Data.dll": {}
+        }
+      },
+      "DayCounter.Shared/1.0.0": {
+        "runtime": {
+          "DayCounter.Shared.dll": {}
         }
       }
     }
@@ -44,6 +53,11 @@
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
     },
     "DayCounter.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DayCounter.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
